@@ -1,0 +1,12 @@
+{
+  "name": "capelloon3Sovversiv3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  },
+  "scripts": {
+    "watchscss": "node-sass -w scss -o css"
+  }
+}
