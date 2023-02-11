@@ -59,6 +59,14 @@ class Bubble extends Entity {
         this.ctx.fillRect(0, 0, 512, 512)
 
         this.ctx.drawImage(
+            this.currentActorImg,
+            this.state == "-flip" ? 350 : 30,
+            230,
+            150,
+            150
+        )
+
+        this.ctx.drawImage(
             this.img,
             this.x,
             this.y,
@@ -75,13 +83,7 @@ class Bubble extends Entity {
             16
         )
 
-        this.ctx.drawImage(
-            this.currentActorImg,
-            this.state == "-flip" ? 350 : 30,
-            270,
-            100,
-            100
-        )
+
     }
 }
 
