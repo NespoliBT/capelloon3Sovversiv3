@@ -1,5 +1,5 @@
 class Entity {
-    constructor(x, y, width, height, speed, sprite, state = "idle") {
+    constructor(x, y, width, height, speed, sprite, state = "idle", id = "") {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -7,6 +7,7 @@ class Entity {
         this.speed = speed;
         this.sprite = sprite;
         this.state = state
+        this.id = id
 
         this.img = new Image()
         this.img.src = this.sprite

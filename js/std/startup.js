@@ -2,36 +2,43 @@ import Player from "../classes/player.js"
 import Background from "../classes/background.js"
 import Guide from "../classes/guide.js"
 import Bubble from "../classes/bubble.js"
+import People from "../classes/people.js"
+import Door from "../classes/door.js"
 import preload from "./preload.js"
+import Foreground from "../classes/foreground.js"
+
 
 const startup = () => {
     preload()
 
     localStorage.setItem("stats", JSON.stringify({
-        "hasMeetGuide": false,
         "conversationID": -1,
+        "stage": 0
     }))
-
 
     const player = new Player(
         20,
-        200,
-        48,
-        48,
+        400,
+        96,
+        96,
         0,
         "idle",
         "player"
     )
 
     const background = new Background(
-        "/assets/background/bg.png"
+        "/assets/stages/0/bg.png"
+    )
+
+    const foreground = new Foreground(
+        "/assets/stages/0/fg.png"
     )
 
     const guide = new Guide(
-        200,
-        200,
-        48,
-        48,
+        2000,
+        400,
+        96,
+        96,
         0,
         "idle",
         "guide"
@@ -39,15 +46,39 @@ const startup = () => {
 
     guide.setDirection(-1)
 
+    const people = new People(
+        2000,
+        400,
+        96,
+        96,
+        0,
+        "idle",
+        "people"
+    )
+
     const bubble = new Bubble(
         ""
+    )
+
+    const door = new Door(
+        2000,
+        400,
+        48,
+        48,
+        0,
+        "",
+        "",
+        "door"
     )
 
     const entities = {
         player,
         background,
         guide,
-        bubble
+        bubble,
+        people,
+        door,
+        foreground
     }
 
     window.entities = entities

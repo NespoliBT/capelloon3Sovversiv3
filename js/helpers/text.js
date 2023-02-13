@@ -22,7 +22,7 @@ function drawText(ctx, text, x, y, maxWidth, size = 40, color = "black") {
     ctx.fillStyle = color;
     const lines = getLines(ctx, text, maxWidth);
     lines.forEach((line, index) => {
-        ctx.fillText(line, x, y + (index * 20));
+        ctx.fillText(line, x, y + (index * size * 1.2));
     });
 }
 

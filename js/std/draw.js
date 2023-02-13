@@ -1,48 +1,37 @@
+import { checkInput } from "./input.js"
+import { checkLevel } from "./level.js"
 
 const draw = (entities) => {
-    const { player, background, guide, bubble } = entities
+    const {
+        player,
+        background,
+        guide,
+        bubble,
+        people,
+        door,
+        foreground
+    } = entities
 
     background.update()
-    guide.update()
     player.update()
+    foreground.update()
 
-    document.onkeydown = (e) => {
-        if (e.key === " ") {
-            bubble.next()
-        }
+    checkInput(player, bubble)
 
-        if (!player.stalled) {
-            if (e.key === "ArrowRight") {
-                player.right()
-            }
-            if (e.key === "ArrowLeft") {
-                player.left()
-            }
-        }
-    }
-
-    document.onkeyup = (e) => {
-        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-            player.state = "idle"
-            player.xOffset = 0
-            player.speed = 0
-        }
-    }
+    checkLevel(entities)
 
     const conversationID = player.stats.conversationID
 
     if (conversationID != -1) {
-        if (conversationID == 0) {
-            player.state = "idle"
-            player.speed = 0
-            player.stalled = true
+        player.state = "idle"
+        player.speed = 0
+        player.stalled = true
 
-            bubble.conversationID = conversationID
-            bubble.update()
+        bubble.conversationID = conversationID
+        bubble.update()
 
-            if (bubble.finished) {
-                player.stats.conversationID = -1
-            }
+        if (bubble.finished) {
+            player.stats.conversationID = -1
         }
     } else {
         player.stalled = false

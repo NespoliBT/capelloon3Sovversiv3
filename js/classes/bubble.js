@@ -5,9 +5,9 @@ import Entity from './entity.js'
 class Bubble extends Entity {
     constructor(state) {
         if (state == "-flip")
-            super(0, 250, 96 * 4, 32 * 4, 0, `/assets/bubble/bubble-flip.png`)
+            super(0, 500, 96 * 7.5, 32 * 7.5, 0, "")
         else
-            super(90, 250, 96 * 4, 32 * 4, 0, `/assets/bubble/bubble.png`)
+            super(200, 500, 96 * 7.5, 32 * 7.5, 0, "")
 
         this.oldConversationID = -1
         this.conversationID = -1
@@ -38,8 +38,7 @@ class Bubble extends Entity {
                 this.currentLineIndex++
                 this.currentTextIndex = 0
                 this.state = this.state == "-flip" ? "" : "-flip"
-                this.img.src = `/assets/bubble/bubble${this.state}.png`
-                this.x = this.state == "-flip" ? 0 : 90
+                this.x = this.state == "-flip" ? 40 : 200
                 this.currentActorImg.src = `/assets/${this.conversation.lines[this.currentLineIndex].actor}/profile.png`
             }
         }
@@ -56,34 +55,25 @@ class Bubble extends Entity {
         this.ctx.imageSmoothingEnabled = false;
 
         this.ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
-        this.ctx.fillRect(0, 0, 512, 512)
+        this.ctx.fillRect(0, 0, 960, 480)
 
         this.ctx.drawImage(
             this.currentActorImg,
-            this.state == "-flip" ? 350 : 30,
-            230,
-            150,
-            150
-        )
-
-        this.ctx.drawImage(
-            this.img,
-            this.x,
-            this.y,
-            this.width,
-            this.height
+            this.state == "-flip" ? 650 : 30,
+            500,
+            280,
+            280
         )
 
         drawText(
             this.ctx,
             this.conversation["lines"][this.currentLineIndex]["texts"][this.currentTextIndex],
-            this.state == "-flip" ? 25 : 175,
-            290,
-            280,
-            16
+            this.state == "-flip" ? 80 : 350,
+            560,
+            550,
+            24,
+            "white"
         )
-
-
     }
 }
 

@@ -2,12 +2,13 @@ import Entity from "./entity.js"
 
 class ComplexEntity extends Entity {
     constructor(x, y, width, height, speed, state, id, sprite = "") {
-        super(x, y, width, height, speed, sprite, state)
-        this.id = id
+        super(x, y, width, height, speed, sprite, state, id)
 
         this.stateImgs = []
         this.xOffset = 0
         this.direction = 1
+        this.action = ""
+        this.actionImg = new Image()
 
         const img = new Image()
         img.src = `/assets/${id}/${state}.png`
@@ -34,6 +35,16 @@ class ComplexEntity extends Entity {
             img.src = `/assets/${this.id}/${this.state}${flipped}.png`
         }
 
+        if (this.action != "") {
+            this.ctx.drawImage(
+                this.actionImg,
+                this.x + this.width / 2 - this.actionImg.width / 2,
+                this.y - this.actionImg.height + 10,
+                40,
+                40
+            )
+        }
+
         this.ctx.drawImage(
             this.stateImgs[this.state + flipped],
             this.xOffset,
@@ -45,6 +56,7 @@ class ComplexEntity extends Entity {
             this.width,
             this.height
         )
+
     }
 
     update() {
@@ -52,7 +64,6 @@ class ComplexEntity extends Entity {
         this.draw()
 
         this.checkCollision()
-
     }
 
     checkCollision() {

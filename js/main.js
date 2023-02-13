@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const canvas = document.getElementById("canvas")
 
-    canvas.width = 480
-    canvas.height = 380
+    canvas.width = 960
+    canvas.height = 760
 
     const aspectRatio = canvas.width / canvas.height
 
