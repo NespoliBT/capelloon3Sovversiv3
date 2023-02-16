@@ -11,6 +11,8 @@ import Foreground from "../classes/foreground.js"
 const startup = () => {
     preload()
 
+    const assets = window.assets
+
     localStorage.setItem("stats", JSON.stringify({
         "conversationID": -1,
         "stage": 0
