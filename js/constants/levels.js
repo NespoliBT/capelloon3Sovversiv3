@@ -5,19 +5,23 @@ const levels = {
     },
     1: {
         boundLeft: 0,
-        boundRight: 2,
+        boundRight: null,
         door: {
             x: 0,
             stage: "bar"
         }
     },
-    2: {
-        boundLeft: 1,
+    "barAlley": {
+        boundLeft: null,
         boundRight: null,
+        door: {
+            x: 810,
+            stage: "bar"
+        }
     },
     "bar": {
         boundLeft: 1,
-        boundRight: null,
+        boundRight: "barAlley",
     }
 }
 

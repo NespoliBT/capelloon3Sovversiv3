@@ -9,9 +9,6 @@ class Entity {
         this.state = state
         this.id = id
 
-        this.img = new Image()
-        this.img.src = this.sprite
-
         this.ctx = document.getElementById("canvas").getContext("2d")
     }
 
@@ -20,8 +17,9 @@ class Entity {
     }
 
     draw() {
+        if (this.sprite == "") return;
         this.ctx.drawImage(
-            this.img,
+            this.sprite,
             this.x,
             this.y,
             this.width,

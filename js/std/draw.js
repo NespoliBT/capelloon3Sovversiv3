@@ -32,6 +32,7 @@ const draw = (entities) => {
 
         if (bubble.finished) {
             player.stats.conversationID = -1
+            bubble.reset()
         }
     } else {
         player.stalled = false

@@ -1,8 +1,9 @@
 import Entity from "./entity.js";
 
 class Foreground extends Entity {
-    constructor(sprite) {
-        super(0, 0, 960, 480, 0, sprite, "", "foreground")
+    constructor() {
+        const assets = window.assets
+        super(0, 0, 960, 480, 0, assets.stages[0].fg, "", "foreground")
 
         this.stage = 0
         this.oldStage = 0
@@ -12,12 +13,12 @@ class Foreground extends Entity {
         this.ctx.imageSmoothingEnabled = false;
 
         if (this.oldStage != this.stage) {
-            this.img.src = `/assets/stages/${this.stage}/fg.png`
+            this.sprite = assets.stages[this.stage].fg
             this.oldStage = this.stage
         }
 
         this.ctx.drawImage(
-            this.img,
+            this.sprite,
             this.x,
             this.y,
             this.width,

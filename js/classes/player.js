@@ -7,9 +7,11 @@ class Player extends ComplexEntity {
 
         this.stalled = false
 
-        this.stats = JSON.parse(localStorage.getItem("stats"))
-
-        this.hasMeetGuide = false
+        this.stats = {
+            stage: 0,
+            conversationID: -1,
+            conversationsHad: []
+        }
     }
 
     update() {
@@ -42,21 +44,17 @@ class Player extends ComplexEntity {
             this.action = ""
         }
         if (entity.id === "guide") {
-            if (this.stats.conversationID == -1 && this.hasMeetGuide == false) {
-                const newStats = JSON.parse(localStorage.getItem("stats"))
-                newStats.conversationID = 0
-                this.stats = newStats
-                this.hasMeetGuide = true
-                localStorage.setItem("stats", JSON.stringify(newStats))
-            }
+            if (this.stats.conversationsHad.includes(entity.conversationID)) return
+
+            this.stats.conversationID = entity.conversationID
+            this.stats.conversationsHad.push(entity.conversationID)
         }
         if (entity.id === "door") {
             if (this.action === "entering") {
                 this.stats.stage = entity.stage
-                localStorage.setItem("stats", JSON.stringify(this.stats))
             } else {
                 this.action = "enter"
-                this.actionImg.src = "/assets/actions/enter.png"
+                this.actionImg = assets.actions[this.action]
             }
         }
     }

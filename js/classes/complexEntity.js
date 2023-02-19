@@ -1,5 +1,6 @@
 import Entity from "./entity.js"
 
+
 class ComplexEntity extends Entity {
     constructor(x, y, width, height, speed, state, id, sprite = "") {
         super(x, y, width, height, speed, sprite, state, id)
@@ -8,12 +9,11 @@ class ComplexEntity extends Entity {
         this.xOffset = 0
         this.direction = 1
         this.action = ""
-        this.actionImg = new Image()
+        this.actionImg = null
 
-        const img = new Image()
-        img.src = `/assets/${id}/${state}.png`
+        const assets = window.assets
 
-        this.stateImgs[state] = img
+        this.stateImgs[state] = assets[id][state]
 
         setInterval(() => {
             if (this.direction == 1) {
@@ -27,12 +27,10 @@ class ComplexEntity extends Entity {
     }
 
     draw() {
-        const img = new Image()
         const flipped = this.direction == 1 ? "" : "-flip"
 
         if (!this.stateImgs[this.state + flipped]) {
-            this.stateImgs[this.state + flipped] = img
-            img.src = `/assets/${this.id}/${this.state}${flipped}.png`
+            this.stateImgs[this.state + flipped] = assets[this.id][this.state + flipped]
         }
 
         if (this.action != "") {

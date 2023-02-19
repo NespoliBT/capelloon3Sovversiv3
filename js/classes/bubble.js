@@ -1,4 +1,4 @@
-import conversations from '../constants/conversations.js';
+import { conversations } from '../constants/conversations.js';
 import { drawText } from '../helpers/text.js';
 import Entity from './entity.js'
 
@@ -16,7 +16,7 @@ class Bubble extends Entity {
         this.currentLineIndex = 0
         this.currentTextIndex = 0
 
-        this.currentActorImg = new Image()
+        this.currentActorImg = null
 
         this.finished = false
     }
@@ -35,11 +35,14 @@ class Bubble extends Entity {
             if (this.currentTextIndex < this.conversation.lines[this.currentLineIndex].texts.length - 1) {
                 this.currentTextIndex++
             } else {
+                if (this.conversation.lines[this.currentLineIndex].link != null) {
+                    window.open(this.conversation.lines[this.currentLineIndex].link, "_blank")
+                }
                 this.currentLineIndex++
                 this.currentTextIndex = 0
                 this.state = this.state == "-flip" ? "" : "-flip"
                 this.x = this.state == "-flip" ? 40 : 200
-                this.currentActorImg.src = `/assets/${this.conversation.lines[this.currentLineIndex].actor}/profile.png`
+                this.currentActorImg = assets[this.conversation.lines[this.currentLineIndex].actor]["profile"]
             }
         }
     }
@@ -48,7 +51,7 @@ class Bubble extends Entity {
         if (this.oldConversationID != this.conversationID) {
             this.oldConversationID = this.conversationID
             this.conversation = conversations[this.conversationID]
-            this.currentActorImg.src = `/assets/${this.conversation.actors[0]}/profile.png`
+            this.currentActorImg = assets[this.conversation.actors[0]]["profile"]
             this.finished = false
         }
 
@@ -60,7 +63,7 @@ class Bubble extends Entity {
         this.ctx.drawImage(
             this.currentActorImg,
             this.state == "-flip" ? 650 : 30,
-            500,
+            480,
             280,
             280
         )
@@ -74,6 +77,19 @@ class Bubble extends Entity {
             24,
             "white"
         )
+    }
+
+    reset() {
+        this.oldConversationID = -1
+        this.conversationID = -1
+        this.conversation = null
+
+        this.currentLineIndex = 0
+        this.currentTextIndex = 0
+
+        this.currentActorImg = null
+
+        this.finished = false
     }
 }
 

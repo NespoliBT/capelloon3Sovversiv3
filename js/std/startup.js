@@ -2,43 +2,28 @@ import Player from "../classes/player.js"
 import Background from "../classes/background.js"
 import Guide from "../classes/guide.js"
 import Bubble from "../classes/bubble.js"
+import Bak2Out from "../classes/bak_2_out.js"
 import People from "../classes/people.js"
 import Door from "../classes/door.js"
 import preload from "./preload.js"
 import Foreground from "../classes/foreground.js"
 
-
-const startup = () => {
-    preload()
-
-    const assets = window.assets
-
-    localStorage.setItem("stats", JSON.stringify({
-        "conversationID": -1,
-        "stage": 0
-    }))
-
-    const player = new Player(
+const createPlayer = () => {
+    return new Player(
         20,
-        400,
+        384,
         96,
         96,
         0,
         "idle",
         "player"
     )
+}
 
-    const background = new Background(
-        "/assets/stages/0/bg.png"
-    )
-
-    const foreground = new Foreground(
-        "/assets/stages/0/fg.png"
-    )
-
+const createGuide = () => {
     const guide = new Guide(
         2000,
-        400,
+        384,
         96,
         96,
         0,
@@ -48,7 +33,27 @@ const startup = () => {
 
     guide.setDirection(-1)
 
-    const people = new People(
+    return guide
+}
+
+const createBak2Out = () => {
+    const bak2out = new Bak2Out(
+        2000,
+        384,
+        96,
+        96,
+        0,
+        "idle",
+        "bak2out"
+    )
+
+    bak2out.setDirection(-1)
+
+    return bak2out
+}
+
+const createPeople = () => {
+    return new People(
         2000,
         400,
         96,
@@ -57,35 +62,49 @@ const startup = () => {
         "idle",
         "people"
     )
+}
 
-    const bubble = new Bubble(
-        ""
-    )
-
-    const door = new Door(
+const createDoor = () => {
+    return new Door(
         2000,
         400,
         48,
         48,
         0,
-        "",
+        window.debug ? window.assets.red : "",
         "",
         "door"
     )
+}
 
-    const entities = {
+const createEntities = () => {
+    const bubble = new Bubble()
+    const background = new Background()
+    const foreground = new Foreground()
+
+    const player = createPlayer()
+    const guide = createGuide()
+    const bak2out = createBak2Out()
+    const people = createPeople()
+    const door = createDoor()
+
+    return {
         player,
         background,
         guide,
         bubble,
         people,
         door,
-        foreground
+        foreground,
+        bak2out
     }
+}
 
-    window.entities = entities
+const startup = async () => {
+    window.assets = await preload()
+    window.entities = createEntities()
 
-    return entities
+    return window.entities
 }
 
 export { startup }

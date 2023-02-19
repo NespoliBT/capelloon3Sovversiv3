@@ -1,8 +1,10 @@
 import Entity from "./entity.js";
 
+
 class Background extends Entity {
-    constructor(sprite) {
-        super(0, 0, 960, 480, 0, sprite, "", "background")
+    constructor() {
+        const assets = window.assets
+        super(0, 0, 960, 480, 0, assets.stages[0].bg, "", "background")
 
         this.stage = 0
         this.oldStage = 0
@@ -14,11 +16,11 @@ class Background extends Entity {
 
         if (this.oldStage != this.stage) {
             this.oldStage = this.stage
-            this.img.src = `/assets/stages/${this.stage}/bg.png`
+            this.sprite = assets.stages[this.stage].bg
         }
 
         this.ctx.drawImage(
-            this.img,
+            this.sprite,
             this.x,
             this.y,
             this.width,

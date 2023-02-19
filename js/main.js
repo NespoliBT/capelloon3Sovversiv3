@@ -1,9 +1,13 @@
 import { draw } from "./std/draw.js"
 import { startup } from "./std/startup.js"
+import { loadingSentences } from "./constants/loadingSentences.js"
+
+window.debug = false
 
 document.addEventListener("DOMContentLoaded", () => {
-    const entities = startup()
-
+    const loading = document.getElementById("loading")
+    const sentence = document.getElementById("sentence")
+    const dots = document.getElementById("dots")
     const canvas = document.getElementById("canvas")
 
     canvas.width = 960
@@ -19,7 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.style.height = window.innerHeight + "px"
     }
 
-    setInterval(() => {
-        draw(entities)
-    }, 10)
+    const dotsInterval = setInterval(() => {
+        dots.innerHTML += "."
+        if (dots.innerHTML.length > 3) dots.innerHTML = ""
+    }, 300);
+
+    const sentenceInterval = setInterval(() => {
+        sentence.innerHTML =
+            loadingSentences[Math.floor(Math.random() * loadingSentences.length)]
+    }, 2000);
+
+    startup().then((entities) => {
+        loading.classList.add("hidden")
+        clearInterval(dotsInterval)
+        clearInterval(sentenceInterval)
+
+        setInterval(() => {
+            draw(entities)
+        }, 10)
+    })
 })
