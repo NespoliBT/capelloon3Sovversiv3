@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'hacka';
+    src: url("/fonts/hacka.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+    background: #000000;
+    font-family: 'hacka', sans-serif;
+    color: #00ff00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 100px;
+
+        @media screen and (max-width: 500px) {
+            font-size: 2rem;
+        }
+    }
+
+    img {
+        width: 500px;
+        max-width: calc(100% - 100px);
+    }
+
+}

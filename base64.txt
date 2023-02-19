@@ -1,0 +1,6 @@
+Come decodificare stringhe base64
+ 
+Apri la console del tuo browser e lancia questi comandi:
+ 
+const stringa = "4pyTIMOgIGxhIG1vZGU"
+decodeURIComponent(escape(window.atob(stringa)));

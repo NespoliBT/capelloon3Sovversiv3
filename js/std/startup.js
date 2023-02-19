@@ -39,7 +39,7 @@ const createGuide = () => {
 const createBak2Out = () => {
     const bak2out = new Bak2Out(
         2000,
-        384,
+        400,
         96,
         96,
         0,

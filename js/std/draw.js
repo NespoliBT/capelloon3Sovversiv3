@@ -9,7 +9,8 @@ const draw = (entities) => {
         bubble,
         people,
         door,
-        foreground
+        foreground,
+        bak2out
     } = entities
 
     background.update()
@@ -17,7 +18,6 @@ const draw = (entities) => {
     foreground.update()
 
     checkInput(player, bubble)
-
     checkLevel(entities)
 
     const conversationID = player.stats.conversationID

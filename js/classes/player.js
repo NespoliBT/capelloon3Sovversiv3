@@ -20,6 +20,12 @@ class Player extends ComplexEntity {
 
         this.checkBounds()
         this.checkCollision()
+
+        if (window.wakeup == "Le patate di mamma") {
+            window.wakeup = ""
+
+            window.close()
+        }
     }
 
     checkBounds() {
@@ -43,12 +49,14 @@ class Player extends ComplexEntity {
         if (entity.id === "background") {
             this.action = ""
         }
-        if (entity.id === "guide") {
+
+        if (entity.conversationID != undefined && entity.id != "people") {
             if (this.stats.conversationsHad.includes(entity.conversationID)) return
 
             this.stats.conversationID = entity.conversationID
             this.stats.conversationsHad.push(entity.conversationID)
         }
+
         if (entity.id === "door") {
             if (this.action === "entering") {
                 this.stats.stage = entity.stage

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderWeb - Decrypt</title>
+    <link rel="stylesheet" href="/css/underweb/main.css">
+    <script src="/underweb/js/crypto-js.min.js"></script>
+    <script>
+        function decrypt() {
+            var message = document.getElementById("message").value;
+            var result = CryptoJS.AES.decrypt(message, "non_dovresti_leggere_questo");
+            document.getElementById("result").innerHTML = result.toString(CryptoJS.enc.Utf8);
+        }
+
+        function encrypt() {
+            var message = document.getElementById("message").value;
+            var result = CryptoJS.AES.encrypt(message, "non_dovresti_leggere_questo");
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/underweb/">Home</a>
+            </li>
+            <li>
+                <a href="/underweb/decrypt.html">Decrypta</a>
+            </li>
+            <li>
+                <a href="/underweb/guides/">Guide</a>
+            </li>
+            <li>
+                <a href="/underweb/about.html">Chi siamo</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>UnderWeb</h1>
+        <h5>La Tua Fonte di informazioni legali</h5>
+
+        <h2>Decrypt</h2>
+        <div class="decrypter">
+            <input type="text" id="message">
+            <button onclick="decrypt()">Decrypt</button>
+            <p id="result"></p>
+        </div>
+    </main>
+</body>
+
+</html>

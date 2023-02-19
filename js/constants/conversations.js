@@ -105,6 +105,52 @@ const conversations = {
                 texts: [
                     "La parte finale sembra essere stata codificata.",
                     "Chissà cosa c'è scritto.",
+                    "Questo potrebbe esserti utile.",
+                ],
+                link: "/underweb/"
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Grazie, Clippy.",
+                ]
+            }
+        ]
+    },
+    3: {
+        actors: ["bak2out", "player"],
+        lines: [
+            {
+                actor: "bak2out",
+                texts: [
+                    "Eccoti Zeno, finalmente",
+                    "Come procede l'azione davanti al municipio?",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Ci conosciamo?",
+                    "Non so dicosa stai parlando."
+                ]
+            },
+            {
+                actor: "bak2out",
+                texts: [
+                    "Oh no, non di nuovo.",
+                    "Devi smetterla con le droghe pesanti.",
+                    "\\s Ciao Zeno, sono il tuo amico Bak2out.",
+                    "Stiamo organizzando un'azione davanti al municipio.",
+                    "Il tuo compito è quello di assicurarti che l3 compagn3 stiano bene.",
+                    "Se qualcosa dovesse andare storto leggi questo.",
+                ],
+                link: "https://eleuthera.it/files/materiali/Bakunin_Liberta_degli_uguali.pdf"
+            },
+            {
+                actor: "player",
+                texts: [
+                    "* pensando * Forse al municipio mi ricorderò qualcosa.",
+                    "Ok vado subito.",
                 ]
             }
         ]

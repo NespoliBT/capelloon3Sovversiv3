@@ -19,7 +19,7 @@ function checkLevel(entities) {
 
         background.isLoading = true
 
-        if (Math.random() > 0.3) {
+        if (Math.random() > 0.2) {
             setTimeout(() => background.isLoading = false, 200);
         } else {
             sentence.innerHTML = randomSentences[Math.floor(Math.random() * randomSentences.length)]
@@ -31,41 +31,16 @@ function checkLevel(entities) {
         }
     }
 
-    if (stage == 0) {
-        guide.x = 400
-        guide.conversationID = 0
+    Object.keys(levels[stage].entities).forEach((key) => {
+        const entity = entities[key]
+        const levelEntity = levels[stage].entities[key]
 
-        guide.update()
-    }
+        Object.keys(levelEntity).forEach((key) => {
+            entity[key] = levelEntity[key]
+        })
 
-    if (stage == 1) {
-        people.x = 400
-        door.x = 810
-        door.stage = "bar"
-
-        people.update()
-        door.update()
-    }
-
-    if (stage == "bar") {
-        people.x = 200
-        guide.x = 600
-        guide.conversationID = 1
-
-        people.update()
-        guide.update()
-    }
-
-    if (stage == "barAlley") {
-        people.x = 400
-        door.x = 230
-        door.stage = "bar"
-
-        people.update()
-        door.update()
-    }
-
-    people.conversationID = stage
+        entity.update()
+    })
 
     if (background.isLoading) {
         ctx.fillStyle = "black"
@@ -91,6 +66,7 @@ function checkLevel(entities) {
 
 function changeLevel(player, level, source) {
     const selectedLevel = levels[level];
+    const entities = selectedLevel.entities;
 
     if (source === "left") {
         if (selectedLevel.boundLeft === null) {
@@ -113,8 +89,8 @@ function changeLevel(player, level, source) {
     }
 
     if (source === "door") {
-        player.stats.stage = selectedLevel.door.stage;
-        player.x = selectedLevel.door.x;
+        player.stats.stage = entities.door.stage;
+        player.x = entities.door.xDestination;
     }
 }
 

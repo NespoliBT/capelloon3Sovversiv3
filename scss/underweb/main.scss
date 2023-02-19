@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'hacka';
+    src: url('/fonts/hacka.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background: #000000;
+    font-family: 'hacka', sans-serif;
+    color: #00ff00;
+}
+
+nav {
+    width: 100%;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            a {
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: 1rem 2rem;
+                display: inline-block;
+
+                &:hover {
+                    background: #00ff00;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding: 50px;
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: left;
+        margin: 20px 0;
+    }
+
+    .articles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .article {
+            border: 1px solid #00ff00;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: left;
+                padding: 20px 50px 20px 0;
+                border-bottom: 1px solid #00ff00;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+                margin: 20px 0;
+            }
+
+            a {
+                background: #00ff00;
+                color: #000000;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    .guides {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .guide {
+            border: 1px solid #00ff00;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: left;
+                padding: 20px 50px 20px 0;
+                border-bottom: 1px solid #00ff00;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+                margin: 20px 0;
+            }
+
+            a {
+                background: #00ff00;
+                color: #000000;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    .guide-description {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.4rem;
+
+        a {
+            color: #000000;
+            background-color: #00ff00;
+        }
+    }
+
+    .decrypter {
+        #message {
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00ff00;
+            background-color: #000000;
+            color: #00ff00;
+            outline: none;
+
+            &:focus {
+                border: 1px solid #00ff00;
+            }
+        }
+
+        button {
+            background: #00ff00;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        #result {
+            width: 100%;
+            height: 200px;
+            font-size: 1.5rem;
+            padding: 10px;
+            margin: 10px 0;
+
+            font-family: 'Courier New', Courier, monospace;
+        }
+    }
+
+    .about {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
+    }
+}
