@@ -11,7 +11,7 @@ const levels = {
     },
     1: {
         boundLeft: 0,
-        boundRight: null,
+        boundRight: "macrosoft",
         entities: {
             door: {
                 xDestination: 0,
@@ -57,7 +57,16 @@ const levels = {
             }
         }
     },
-
+    "macrosoft": {
+        boundLeft: 1,
+        boundRight: null,
+        entities: {
+            people: {
+                x: 200,
+                conversationID: "macrosoft"
+            },
+        }
+    }
 }
 
 export { levels }
