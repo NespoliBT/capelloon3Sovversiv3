@@ -11,7 +11,7 @@ const levels = {
     },
     1: {
         boundLeft: 0,
-        boundRight: "macrosoft",
+        boundRight: "macrohard",
         entities: {
             door: {
                 xDestination: 0,
@@ -38,7 +38,7 @@ const levels = {
                 conversationID: "barAlley"
             },
             bak2out: {
-                x: 800,
+                x: 600,
                 conversationID: 3
             }
         }
@@ -57,16 +57,54 @@ const levels = {
             }
         }
     },
-    "macrosoft": {
+    "macrohard": {
         boundLeft: 1,
         boundRight: null,
+        restriction: 3,
         entities: {
             people: {
                 x: 200,
-                conversationID: "macrosoft"
+                conversationID: "macrohard"
+            },
+            jenny: {
+                x: 400,
+                conversationID: "macrohard"
+            },
+            guide: {
+                x: 450,
+            },
+            door: {
+                x: 630,
+                xDestination: 420,
+                stage: "macrohard-inside"
+            }
+        }
+    },
+    "macrohard-inside": {
+        boundLeft: null,
+        boundRight: null,
+        entities: {
+            tfT_UdqThD: {
+                x: 600,
+                conversationID: "macrohard-inside"
+            },
+            door: {
+                x: 450,
+                xDestination: 550,
+                stage: "macrohard",
             },
         }
-    }
+    },
+    /*     "macrohard-1": {
+            boundLeft: "macrohard-inside",
+            boundRight: null,
+            entities: {
+                people: {
+                    x: 200,
+                    conversationID: "macrohard-1"
+                },
+            }
+        } */
 }
 
 export { levels }

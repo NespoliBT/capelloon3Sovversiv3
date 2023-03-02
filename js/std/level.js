@@ -1,6 +1,6 @@
 import { levels } from "../constants/levels.js"
 import { randomSentences } from "../constants/loadingSentences.js"
-
+import { setCookie, getCookie } from "../helpers/cookie.js"
 const ctx = document.getElementById("canvas").getContext("2d")
 let oldLevel = 0
 
@@ -8,7 +8,7 @@ function checkLevel(entities) {
     const loading = document.getElementById("loading")
     const sentence = document.getElementById("sentence")
 
-    const { player, background, guide, bubble, people, door, foreground } = entities
+    const { player, background, guide, bubble, people, door, foreground, minimap } = entities
 
     const stage = player.stats.stage
 
@@ -16,8 +16,10 @@ function checkLevel(entities) {
         oldLevel = stage
         background.stage = stage
         foreground.stage = stage
+        minimap.stage = stage
 
         background.isLoading = true
+        const stats = JSON.parse(getCookie("stats"))
 
         if (Math.random() > 0.2) {
             setTimeout(() => background.isLoading = false, 200);
@@ -25,6 +27,7 @@ function checkLevel(entities) {
             sentence.innerHTML = randomSentences[Math.floor(Math.random() * randomSentences.length)]
             loading.classList.remove("hidden")
             setTimeout(() => {
+
                 background.isLoading = false
                 loading.classList.add("hidden")
             }, 4000);
@@ -57,7 +60,7 @@ function checkLevel(entities) {
                 player.action = ""
                 return
             }
-            if (entity.id === "background" || entity.id === "foreground") return
+            if (entity.id === "background" || entity.id === "foreground" || entity.id == "minimap") return
 
             entity.x = 2000
         })
@@ -65,11 +68,16 @@ function checkLevel(entities) {
 }
 
 function changeLevel(player, level, source) {
+    const stats = JSON.parse(getCookie("stats"))
     const selectedLevel = levels[level];
     const entities = selectedLevel.entities;
 
     if (source === "left") {
-        if (selectedLevel.boundLeft === null) {
+        if (selectedLevel.boundLeft === null ||
+            !stats.conversationsHad.includes(
+                levels[selectedLevel.boundLeft].restriction
+            ) &&
+            levels[selectedLevel.boundLeft].restriction != undefined) {
             player.x = 0;
             return;
         }
@@ -79,7 +87,12 @@ function changeLevel(player, level, source) {
     }
 
     if (source === "right") {
-        if (selectedLevel.boundRight === null) {
+        if (selectedLevel.boundRight === null ||
+            !stats.conversationsHad.includes(
+                levels[selectedLevel.boundRight].restriction
+            ) &&
+            levels[selectedLevel.boundRight].restriction != undefined
+        ) {
             player.x = 960 - player.width;
             return;
         }

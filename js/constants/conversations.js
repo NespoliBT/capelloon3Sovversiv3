@@ -12,9 +12,9 @@ const conversations = {
             {
                 actor: "guide",
                 texts: [
-                    "Finalmente sei sveglio!",
+                    "You are finally awake! *",
                     "Piacere, Clippy.",
-                    "Ti trovi a Carugate, l'ultima città ad essersi arresa.",
+                    "Eh testina, ci trovimo a Carugate, l'ultima città in cui in governo si è arreso.",
                 ]
             },
             {
@@ -35,9 +35,14 @@ const conversations = {
             {
                 actor: "player",
                 texts: [
-                    "Mi chiamo...",
-                    "Non ricordo.",
-                    "Mi chiamo...",
+                    "...Mi chiamo...",
+                    "Non ricordo."
+                ]
+            },
+            {
+                actor: "guide",
+                texts: [
+                    "Vatti a prendere una birretta, magari ti aiuta."
                 ]
             }
         ]
@@ -54,7 +59,7 @@ const conversations = {
             {
                 actor: "guide",
                 texts: [
-                    "Ho cambiato la mia x, no scherzo mi hanno programmato qui.",
+                    "Con la mia barca.",
                     "In ogni caso, hai visto la gente che sta giocando alla gallina?",
                     "Mi chiedo se ci sia un significato nascosto.",
                     "Dovresti provarlo è molto divertente.",
@@ -72,10 +77,10 @@ const conversations = {
                 actor: "guide",
                 texts: [
                     "Merda, mi stavo dimenticando, aspetta che cerco il tuo file.",
-                    "find ./ -type f -name player.txt",
+                    "find ./ -type f -name *.txt",
                     "Ah, eccolo.",
                     "Il tuo nome è...",
-                    "cat player.txt | grep Nome",
+                    "cat U2FsdGVkX19Ydz*.txt | grep Nome",
                     "Zeno, sei Zeno.",
                     "Ti ricordi di Zeno?",
                 ]
@@ -89,8 +94,8 @@ const conversations = {
             {
                 actor: "guide",
                 texts: [
-                    "No tranquillo qui dice che eri uno studente",
-                    "25 anni, prossimo a una laurea in fisica",
+                    "No tranquillo, qui dice che eri uno studente.",
+                    "25 anni, prossimo a una laurea in fisica.",
                     "Qui dice anche che sei fuoricorso, curioso.",
                 ]
             },
@@ -103,7 +108,7 @@ const conversations = {
             {
                 actor: "guide",
                 texts: [
-                    "La parte finale sembra essere stata codificata.",
+                    "La parte finale sembra essere stata cryptata.",
                     "Chissà cosa c'è scritto.",
                     "Questo potrebbe esserti utile.",
                 ],
@@ -124,7 +129,7 @@ const conversations = {
                 actor: "bak2out",
                 texts: [
                     "Eccoti Zeno, finalmente",
-                    "Come procede l'azione davanti alla macrohard?",
+                    "Come procede l'azione davanti alla Macrohard?",
                 ]
             },
             {
@@ -140,7 +145,7 @@ const conversations = {
                     "Oh no, non di nuovo.",
                     "Devi smetterla con le droghe pesanti.",
                     "\\s Ciao Zeno, sono il tuo amico Bak2out.",
-                    "Ti ricordi dell'azione davanti alla macrohard, vero?",
+                    "Ti ricordi dell'azione davanti alla Macrohard, vero?",
                     "Il tuo compito è quello di assicurarti che l3 compagn3 stiano bene.",
                     "Se qualcosa dovesse andare storto leggi questo.",
                 ],
@@ -151,6 +156,107 @@ const conversations = {
                 texts: [
                     "- Meglio indagare -",
                     "Ok vado subito.",
+                ]
+            }
+        ]
+    },
+    "macrohard": {
+        actors: ["guide", "player", "jenny"],
+        lines: [
+            {
+                actor: "guide",
+                texts: [
+                    "Questi della Macrohard sono dei veri mattacchioni."
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Un giorno mi devi insegnare a teletrasportarmi."
+                ]
+            },
+            {
+                actor: "jenny",
+                texts: [
+                    "Pronto per entrare Zeno?"
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    'Mi ricordi chi sono questi "mattacchioni"?',
+                ]
+            },
+            {
+                actor: "jenny",
+                texts: [
+                    "Hanno monopolizzato il mercato e hanno distrutto la concorrenza.",
+                    "Il solito schifo!",
+                    "Si fanno chiamare innovatori, salvatori della libertà",
+                ]
+            },
+            {
+                actor: "guide",
+                texts: [
+                    "Non hanno capito che la libertà che tanto bramavano li ha resi ciechi, che sciocchi",
+                ]
+            },
+            {
+                actor: "jenny",
+                texts: [
+                    "Devono rendersi conto che la paura non può fare più male di un sogno. *",
+                    "Ti ricordi quando eravamo bambini e ci raccontavano storie di mostri?",
+                    "É arrivato il momento di confrontare i mostri."
+                ]
+            }
+        ]
+    },
+    "macrohard-inside": {
+        actors: ["tfT_UdqThD", "player"],
+        lines: [
+            {
+                actor: "tfT_UdqThD",
+                texts: [
+                    "Che bastardi, non esistono più questi alberi.",
+                    "Hanno monopolizzato anche questi.",
+                    "Dopo aver inquinato l'aria, l'acqua, la terra, ora se la godono.",
+                    "Non è giusto.",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Veramente non esistono più?",
+                    "- Eppure mi sembra di averli visti -",
+                ]
+            },
+            {
+                actor: "tfT_UdqThD",
+                texts: [
+                    "Nel 2050 le temperature globali sono salite di 2 gradi.",
+                    "Tanti ecosistemi sono stati distrutti.",
+                    "Tanti altri sono dovuti cambiare, adattarsi all'asfalto.",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "- 2050?! Come vola il tempo. -",
+                    "Che dici, andiamo a dirgliene due?"
+                ]
+            },
+            {
+                actor: "tfT_UdqThD",
+                texts: [
+                    "Non aspettavo altro.",
+                    "Tieni questo, potrebbe esserti utile.",
+                ],
+                link: "/assets/uno_reverse_card.jpg"
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Ehm... grazie?",
                 ]
             }
         ]
@@ -166,8 +272,8 @@ const peopleConversations = {
     "barAlley": [
         " ̷̺̥̘̜͚̰̙̉̊̈́̽̇̓̄̽͘̕̕͜Ç̴̛̛̖̼̼̰͎̤̥̖͔̤̥͙̥̩̫͉̘͕͈͈̩͍͉̙̙̻͉̞͍̘͍̑̓̈́̈́̉̎̈́̿̽̐̃̄͋̽̏̔̄̀͂̀̈́̔̈̓͐͗͌̐̌̉̀̚͘̚͝͝͠͝ͅḨ̴̨̨̨̛͇̬͈͔̞͔͎̜͔̘͔͔͇̯̥̭̞̠̞̲̫̳̪̳̺̟͉̫̙̳̲̯̳̩̹̜̏̈́̇͋͋̓̓ͅI̴̧̡͎̎̅̌̊̀͜ ̴̢̧̗̰̪̻̪̘͇̣̼̦̗͖͙̼̱̖̈́̒̎̃̔͜͜͝ͅͅŞ̶̡̨̡̨̡̧̡̛̛̗̝̰̯̮̻̼̞͔̩͙͓̼̰͎̱̱͍̣̪̣͕͖͓̬̝̬̤̝͇͇͚̮͕̉̊̇̅́͌̄͛̽͋͆͊͑̌̑̽̄̾͋̿̀͆̂͑̀͆̾͗̓͛̈́͐̕͝͝͝͝Ȩ̶͔̭̙̫̝̟͕̖̣͎͂́̂́͊̿̂̊̒͊͛̔̔͌͋͒̉̈́͑͛͆̐̀̔̎͆͘͝I̶̡̨̛̼̳̰͕̼͈͛̾̀̀̉͐̒̆͗́̅̍̌́̋̇̓́͋̾̉͑̈́̕̕͝.̷̡̧̧̬̭̺̖̝̺̜͖̺͉̗͈͈̭̹̬̼͙̲̞̱͖̯̯̙͎̗̬̝͖̗̑͋̀̈̊̐̿̄͂͘͜͜͜͜ ̴̧̨̡̫̟̰̰̦̖̖̞͍̰͙̲̱̙̳̝̗̝̼̲̙͙̭̩̝̩͉̳̼̪̩͚͓̹̔̌̐̈̌͐̾̃̎͘͜͜ͅͅḼ̷̡̡̨̢̢̧̨̡̲͈̫̙͙̤̱͈̲̼̯̱͍͕̫͈͙̻̲̻̙͔̙̠͚̼̱͈̘̙́̉̈́͛̄̅͋̿̓͑̀̎̈̒̆̽̓́̂́͗͑̋͘͜͝͝͝ͅA̵̧̡̛̯͕͖̳̰͎̮̖̖̦̝̫̗̲̭̦̰͉̱̦̻̗̺̗̠͔̟̫̻̩̬̤̋́̉́̓̉͒̐̀̋́̓͛̒͘͘͜͝͠ͅͅŞ̴̨̨̨̡̧͈͕͇̬̰̞̞̠̼̮͙̺̯̱̲̜̘͚̼̤̮̤̜̦̬͒̓̓̓͋̈́̆͗̅̒̍̀̃̌͋̊́̓͗̾͛́̾̀̃̏̒͘̕̕͜͜͜͝Ć̵̢̧̡̡̛̻͔̦̰̟͙̱͚̞̹͓̥̠̹̻͔̣̞̘͎̙̯̙̉͗̑͒̃͑́͌̎̓̒͌̀̾̆̓̒́̀̎̏͂̀̑̎̃̿͑̚͘͜͜͜͝͝͠I̵̢̢̢̛̤̺̣͚͙̫͍̹̩͖̻̘̹̫͎͓͍̦̩̥̮̬̝͚̫̅̏̏̃̾͊̀̓̀̀͒̍̿̐͗͛̈͛́͂̆̃͌͐̀̇̒̊̃̚͘͠͝͠Ạ̵̧̧̨̛̛̭̭̖̘̳̖̦̖͔̫̘̟͈̰̻̼͈͎͖̫̺̀̿̅̏̓̍̒̿̈́̌͛̔̓̓̾͆̐͊͌̍͛͋̇̈͊͛͗̾͆̐͑͜ͅͅM̸̧̨̢̡͙̯̮̺̙͇̪̩̣̰͍͎̣̟̝͇͔̮̯̖̀͑̌̀̎̀̄͐͌̉̑́̾̋̀̆͊̓́̐͛̎͊̓̃́̿̂̀͗̎́͂͛̑͜͠I̶͉̦͖̼̦̫̓́͑͑̌͌͂̑̿̄̊͑̑́͛̃̔̀͊̈́̓̓̒̍̍̎͛͛͑̓͋̃̂́͌̔̍̕͜͝͝͝͠ ̸̨̢̨̡͓͈̼͚̜̳̖̺̣͉͉̣̙̭̘͔̦̲͙̳͉͔̪̤̺͕̪̗̺̩̜̱̰̔̈̌̍̐̈́̽̒̍̏͐̔̽̋̓̏͝͠ͅS̴̨̢̛̝̰̱̭͚̖̩̤̻͙̹͙̑͋̈̂́̇̽̾́̂̚͜͝͝T̴̨̜̞͖͍͎͓̪̖̪͈̥̬̬̼͔̩͖̫̪̜̪̹̥̩̏͆̏͆̒́̋͊̌͑̀̂̐͆̒́̉̈́̈̔̅̀̀̍̈̏̈́̕͘͝͝Ą̷̘͍̮͍̝̳̗̜̭͙̞̲̎̈́̉̃͑͑̽͑̓̅̋̾̀͑́̈̒̕Ŗ̵̧̢̧̮͔̟͎̻̪̣̞͍̦̠͓̤̩̟̜̻̱̤̜̤̲̮͎̭̳̭̗̣̭̣̖̳̙͕̟̟̃̄͑͋̎̓͗̓̕͜͜͠Ę̷͓̻̻͚͉̮͖̗̘͈̤̼́̊̄͐̑̓͊̊̚̕͝ͅ.̵̧̢͕͙̥̣͎͇͙̬̀͌̽̚͜ ̸̡̢̨̼̠̺̥̮͙͍̦͓͉̞̥̞̖̈́̾̎̐̿͑̐̕͘̚ͅC̷̢̡̛͚̰̮͓͍̥̤̣̰͇̰̟̗̥̯͕̻̘̤̟̹̳̱̘̬͚͆̉̀̉͛́̌̏̃̍̀̌̀̎̿̆̃͋̋̊̍̑́͌̽͐͂̅͋͌͊̑̕̚͘̕̚̚̚͘͜͝ͅO̷̧̢̨̡̠̝̹͍̰͚͈̮̱̮̪̦̞̘̺͎̟͍͈̳̫͇̿̍̽̋̾͗͐͆̊͒͋̈́̓̔̐̔̓̋̐̆̃M̴̘̦̭̀̍́̐̋͑̇̑̈́̈̈́͠Ę̵̡̧̬̟̗͕̙̦͓̯̭̜̹̼̠̮̤̻̜͓̱̖̭̫̟̗͚̙̲̭͎̮͔̜͚͇̪̍̽̑̒̽͛̌͌̉̌́̑̌͒͋͛̾͋̇͊͌̈́͗̈͂͒̈́̌͌͛́̔̔̒̐͆̾͘̚̚̚͜͜͜͝͝ ̴̡̥̹̭̖͚͓̭̬͕̝̱̦͎̝̩̠͙̼͍̩̬̳̻̫̟̻̞̲͓̰̘͑̑͒̓̉̎͂̀̌̐̈́̐͐̈́͐̓̇̓̃̆̓͐̿̃̿̌͌͛̒̌̋͋̀̌͑́͘̕͝͠͠͝͝S̵̡̨̧̧̛̛̼̲̟͖͚̙̲̱̦͓̼͉͙̟̼̻̼̪͈͑͗̊͌͗͌͊̌̒̄̄̚ͅO̸̧̨̢͖̠̹̭͈̜̫͇͎̝̜̫͉̯̮̯̤̤̮͓̞̙̦͖̭͉͍̿͒͒̾̍̇͜N̷̗̭̹̗̟̒̀̒̇̄̿̒̾͋͆͆̓͊̿̀͆̓̓͆̿̉̋̅͂͘̕̚̚͜͜͝͠͝O̸̧̜͇̲̮̜͆͐̋̈̈́̎̚͜͠͝ ̸̢̨̛̥̗̣̪̙̯̝̩͙̯̮͚͔̜̮̣͎̝̫̮͍̺̭͕̋̔̏̌̎͑͆͊̈́͆̈́̃̐̆̾̅͑̂̑͌̅͒́́̒͐̎͝ͅͅͅF̵̡̯̪̺͕̗̤̝̬̝͉͉͉̱̫̥̹̥̟̱̥̻̖͓̹̮̜͉̜͇̩̟̰̻̮̟͉͔̘͎̓̈́͛̈̒̐̕̚ͅǏ̴̝̗͌̌̌͐̑̂̓͋̈́̇͛̀͗̋̂̐͒̈́͌̍̍͑́͊̊͑̀͘̕͘͠Ṉ̶̢̺̤̥͙̰͇̬͕̯̗̺͗̐̍̿̇̈́̾͐̓͂͆̀̈́͂̅̂́̇̊͂͐͐̇̃̕͘͜͝͝Ḭ̶̧̖̠̘̫̤̖̻̘͓̤͎̯̹̱̩͈̯̪͉̥̃̅̒̈̊̂̅̐͛̈̑̓͆̏̅͑̿̈́͒͂͐͑̊̀̀͆͜T̵͉͈͚͍̼͈̠͍̝͙̬͙̍́̋́̈́͛̈́̾͂͌̅̊̈́͋̋͆͂͘̕͝O̸̢̨̫̯̤͔̰͓̥̻̦̖̺̣̫̖̱͓̲̪̪̹͖͚̩̞͇̘͇̹̾͜͜ ̴̨̧̢̛̛͍̫͙̯͓͎̯̰̟̟͎̹̫̲̳̥̣͓͎̣͚̤̦̝̟̬̗̼͕̲̰͈̤̘̩̻̀̾̆̉̈́͋͗͐̾̄̽̈́͐́͊͂̂̌̈́̓͊͊͑̽͆͊̂̒͆̊͛͊̇̈̊̐̕͠͠͝͠ͅͅͅQ̴̢̛̮͓͈̗͕͕̰͇̲͍̹͎̙̭͖̬̄̄͂͂̆̐́̏̽͐͛́͗̅̋͊̀̀̾͋͂̈͑̃͆̄͂̅̓̇̎̒̏͘͘̚̕̚͜͠͠U̷͇̫̪͑́̓̔̈́Ǐ̶̛̛͉̻̹̻̈̀̍̑̅̀̑̃̓̀͐͆̊̂̽̽͗̍́͒̅͑̿́̄̕͝͝͝͝͝.̸̢̛̪͎͔̙̲̘̦̳͍͎̞̬̝̥̤̰̣̘̜͍̌͛̎̈͊̽͜"
     ],
-    "macrosoft": [
-        "Tout le monde déteste la police",
+    "macrohard": [
+        "Tout le monde déteste la police!",
     ]
 }
 

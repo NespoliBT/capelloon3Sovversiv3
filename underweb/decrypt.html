@@ -10,14 +10,14 @@
     <script src="/underweb/js/crypto-js.min.js"></script>
     <script>
         function decrypt() {
-            var message = document.getElementById("message").value;
-            var result = CryptoJS.AES.decrypt(message, "non_dovresti_leggere_questo");
+            const message = document.getElementById("message").value;
+            const result = CryptoJS.AES.decrypt(message, "non_dovresti_leggere_questo");
             document.getElementById("result").innerHTML = result.toString(CryptoJS.enc.Utf8);
         }
 
         function encrypt() {
-            var message = document.getElementById("message").value;
-            var result = CryptoJS.AES.encrypt(message, "non_dovresti_leggere_questo");
+            const message = document.getElementById("message").value;
+            const result = CryptoJS.AES.encrypt(message, "non_dovresti_leggere_questo");
             document.getElementById("result").innerHTML = result;
         }
     </script>

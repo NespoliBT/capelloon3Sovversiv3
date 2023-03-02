@@ -2,7 +2,7 @@ import assets from "../constants/assets.js";
 
 const preloadedAssets = {};
 
-const preload = (obj = assets) => {
+const preload = async (obj = assets) => {
     const subAssets = Object.keys(obj);
     const promises = [];
 
@@ -17,16 +17,17 @@ const preload = (obj = assets) => {
                     obj[subAsset] = img;
                     resolve();
                 };
-
-                img.onerror = reject;
+                img.onerror = (e) => {
+                    window.debug && console.log(e, obj[subAsset])
+                    reject();
+                };
                 img.src = obj[subAsset];
             }));
         }
     });
 
-    return Promise.all(promises).then(() => {
-        return assets;
-    });
+    await Promise.all(promises);
+    return assets;
 };
 
 export default preload;

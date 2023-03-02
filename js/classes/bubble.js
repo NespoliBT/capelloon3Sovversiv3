@@ -36,7 +36,6 @@ class Bubble extends Entity {
                 this.currentTextIndex++
             } else {
                 if (this.conversation.lines[this.currentLineIndex].link != null) {
-                    console.log(this.conversation.lines[this.currentLineIndex].link);
                     window.open(this.conversation.lines[this.currentLineIndex].link, "_blank")
                 }
                 this.currentLineIndex++

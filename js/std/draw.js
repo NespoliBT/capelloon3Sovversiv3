@@ -1,5 +1,6 @@
 import { checkInput } from "./input.js"
 import { checkLevel } from "./level.js"
+import { getCookie, setCookie } from "../helpers/cookie.js"
 
 const draw = (entities) => {
     const {
@@ -10,12 +11,14 @@ const draw = (entities) => {
         people,
         door,
         foreground,
-        bak2out
+        bak2out,
+        minimap
     } = entities
 
     background.update()
     player.update()
     foreground.update()
+    minimap.update()
 
     checkInput(player, bubble)
     checkLevel(entities)
@@ -31,6 +34,11 @@ const draw = (entities) => {
         bubble.update()
 
         if (bubble.finished) {
+            const stats = JSON.parse(getCookie("stats"))
+            stats.conversationsHad.push(conversationID)
+            setCookie("stats", JSON.stringify(stats))
+            minimap.generateMap(0, 0, 0, Math.floor(minimap.mapHeight / 2))
+
             player.stats.conversationID = -1
             bubble.reset()
         }
