@@ -11,6 +11,7 @@ import Door from "../classes/door.js"
 import preload from "./preload.js"
 import Foreground from "../classes/foreground.js"
 import { setCookie, getCookie } from "../helpers/cookie.js"
+import Player_ from "../classes/player_.js"
 
 const createPlayer = () => {
     return new Player(
@@ -21,6 +22,18 @@ const createPlayer = () => {
         0,
         "idle",
         "player"
+    )
+}
+
+const createPlayer_ = () => {
+    return new Player_(
+        20,
+        384,
+        96,
+        96,
+        0,
+        "idle",
+        "player_"
     )
 }
 
@@ -126,6 +139,7 @@ const createEntities = () => {
     const foreground = new Foreground()
 
     const player = createPlayer()
+    const player_ = createPlayer_()
     const guide = createGuide()
     const bak2out = createBak2Out()
     const jenny = createJenny()
@@ -145,7 +159,8 @@ const createEntities = () => {
         door,
         minimap,
         foreground,
-        bak2out
+        bak2out,
+        player_,
     }
 }
 

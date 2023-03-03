@@ -81,7 +81,7 @@ const levels = {
         }
     },
     "macrohard-inside": {
-        boundLeft: null,
+        boundLeft: "macrohard-1",
         boundRight: null,
         entities: {
             tfT_UdqThD: {
@@ -95,16 +95,16 @@ const levels = {
             },
         }
     },
-    /*     "macrohard-1": {
-            boundLeft: "macrohard-inside",
-            boundRight: null,
-            entities: {
-                people: {
-                    x: 200,
-                    conversationID: "macrohard-1"
-                },
+    "macrohard-1": {
+        boundLeft: null,
+        boundRight: null,
+        entities: {
+            player_: {
+                x: 200,
+                conversationID: "macrohard-1"
             }
-        } */
+        }
+    }
 }
 
 export { levels }

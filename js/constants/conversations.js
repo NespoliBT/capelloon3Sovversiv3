@@ -260,6 +260,64 @@ const conversations = {
                 ]
             }
         ]
+    },
+    "macrohard-1": {
+        actors: ["player_", "player"],
+        lines: [
+            {
+                actor: "player_",
+                texts: [
+                    "Buffo trovarti qui.",
+                    "Pensavo che ne avessi abbastanza della macrohard.",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Sono piuttosto sicuro sia la mia prima volta qui.",
+                    "Bel taglio di capelli, chi sei?"
+                ]
+            },
+            {
+                actor: "player_",
+                texts: [
+                    "Ti sei licenziato dalla macrohard, anzi, ci siamo licenziati.",
+                    "Eppure tutto sommato ti trovavi bene.",
+                    "Hai fatto un sacco di amicizie e hai guadagnato un sacco di soldi.",
+                    "Eppure non ti sentivi libero.",
+                    "Chi può farsi chiamare libero in fondo?",
+                    "Siamo tutti schiv3 delle nostre agende, dei nostri vizi.",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "La ricerca della libertà è fine a se stessa.",
+                    "Non è un obiettivo, è un processo.",
+                    "Eduardo Gaelano ne sapeva qualcosa di orizzonti.",
+                ]
+            },
+            {
+                actor: "player_",
+                texts: [
+                    "Mi mancherà il mio lavoro.",
+                    "Quanto è comodo stare sotto le coperte e lavorare da casa.",
+                    "Fare lo stretto necessario e non avere un pensiero critico verso il mondo.",
+                    "Non vuoi tornare indietro?",
+                    "...",
+                    "TI PREGO, TI SCONGIURO, TORNA INDIETRO.",
+                ]
+            },
+            {
+                actor: "player",
+                texts: [
+                    "Un caro amico mi ha consigliato un gioco, dovresti provarlo.",
+                    "Chi si ferma perde.",
+                    "Chi corre vince.",
+                    "Il futuro arriva oggi, reggiti a me.",
+                ]
+            }
+        ]
     }
 }
 
