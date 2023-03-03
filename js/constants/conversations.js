@@ -14,13 +14,13 @@ const conversations = {
                 texts: [
                     "You are finally awake! *",
                     "Piacere, Clippy.",
-                    "Eh testina, ci trovimo a Carugate, l'ultima città in cui in governo si è arreso.",
+                    "Eh testina, ci troviamo a Carugate, l'ultima città in cui il governo si è arreso.",
                 ]
             },
             {
                 actor: "player",
                 texts: [
-                    "Arresa? A cosa?",
+                    "Arreso? A cosa?",
                 ]
             },
             {
@@ -53,7 +53,7 @@ const conversations = {
             {
                 actor: "player",
                 texts: [
-                    "Quando sei arrivato qui?",
+                    "Come sei arrivato qui?",
                 ]
             },
             {
@@ -62,7 +62,7 @@ const conversations = {
                     "Con la mia barca.",
                     "In ogni caso, hai visto la gente che sta giocando alla gallina?",
                     "Mi chiedo se ci sia un significato nascosto.",
-                    "Dovresti provarlo è molto divertente.",
+                    "Dovresti provarlo, è molto divertente.",
                 ],
                 link: "http://gioco-della-gallina.nespolibt.com"
             },
@@ -94,9 +94,9 @@ const conversations = {
             {
                 actor: "guide",
                 texts: [
-                    "No tranquillo, qui dice che eri uno studente.",
+                    "No tranquillo, qui dice che sei uno studente.",
                     "25 anni, prossimo a una laurea in fisica.",
-                    "Qui dice anche che sei fuoricorso, curioso.",
+                    "Dice anche che sei fuoricorso, curioso.",
                 ]
             },
             {
@@ -190,7 +190,7 @@ const conversations = {
             {
                 actor: "jenny",
                 texts: [
-                    "Hanno monopolizzato il mercato e hanno distrutto la concorrenza.",
+                    "Hanno monopolizzato il mercato e distrutto la concorrenza.",
                     "Il solito schifo!",
                     "Si fanno chiamare innovatori, salvatori della libertà",
                 ]
@@ -206,7 +206,7 @@ const conversations = {
                 texts: [
                     "Devono rendersi conto che la paura non può fare più male di un sogno. *",
                     "Ti ricordi quando eravamo bambini e ci raccontavano storie di mostri?",
-                    "É arrivato il momento di confrontare i mostri."
+                    "È arrivato il momento di confrontare i mostri."
                 ]
             }
         ]
@@ -286,7 +286,7 @@ const conversations = {
                     "Hai fatto un sacco di amicizie e hai guadagnato un sacco di soldi.",
                     "Eppure non ti sentivi libero.",
                     "Chi può farsi chiamare libero in fondo?",
-                    "Siamo tutti schiv3 delle nostre agende, dei nostri vizi.",
+                    "Siamo tutt3 schiav3 delle nostre agende, dei nostri vizi.",
                 ]
             },
             {
@@ -294,7 +294,7 @@ const conversations = {
                 texts: [
                     "La ricerca della libertà è fine a se stessa.",
                     "Non è un obiettivo, è un processo.",
-                    "Eduardo Gaelano ne sapeva qualcosa di orizzonti.",
+                    "Eduardo Galeano ne sapeva qualcosa di orizzonti.",
                 ]
             },
             {
