@@ -30,7 +30,7 @@ const levels = {
         entities: {
             door: {
                 xDestination: 810,
-                x: 20,
+                x: 65,
                 stage: "bar"
             },
             people: {
@@ -81,7 +81,7 @@ const levels = {
         }
     },
     "macrohard-inside": {
-        boundLeft: "macrohard-1",
+        boundLeft: "macrohard-0",
         boundRight: null,
         entities: {
             tfT_UdqThD: {
@@ -95,14 +95,21 @@ const levels = {
             },
         }
     },
-    "macrohard-1": {
-        boundLeft: null,
+    "macrohard-0": {
+        boundLeft: "macrohard-1",
         boundRight: null,
         entities: {
             player_: {
                 x: 200,
-                conversationID: "macrohard-1"
+                conversationID: "macrohard-0"
             }
+        }
+    },
+    "macrohard-1": {
+        boundLeft: null,
+        boundRight: null,
+        alt: true,
+        entities: {
         }
     }
 }

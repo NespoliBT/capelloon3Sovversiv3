@@ -1,11 +1,15 @@
 import ComplexEntity from "./complexEntity.js"
 import { changeLevel } from "../std/level.js"
+import { levels } from "../constants/levels.js"
+import Bullet from "./bullet.js"
 
 class Player extends ComplexEntity {
     constructor(x, y, w, h, s, state, id) {
         super(x, y, w, h, s, state, id)
 
         this.stalled = false
+
+        this.isShooting = false
 
         this.stats = {
             stage: 0,
@@ -20,6 +24,11 @@ class Player extends ComplexEntity {
 
         this.checkBounds()
         this.checkCollision()
+
+        if (levels[this.stats.stage].alt && this.isShooting == false) {
+            document.body.classList.add("lolcat")
+            this.isShooting = true
+        }
 
         if (window.wakeup == "Le patate di mamma") {
             window.wakeup = ""
@@ -43,6 +52,27 @@ class Player extends ComplexEntity {
 
     enterDoor() {
         changeLevel(this, this.stats.stage, "door")
+    }
+
+    shoot() {
+        setInterval(() => {
+            for (let i = 0; i < 6; i++) {
+                const angle = i * (Math.PI / 3);
+                const xSpeed = 10 * Math.sin(angle);
+                const ySpeed = -10 * Math.cos(angle);
+
+                new Bullet(
+                    this.x + this.width / 2,
+                    this.y + this.height / 2,
+                    40,
+                    40,
+                    xSpeed,
+                    "idle",
+                    "bullet",
+                    ySpeed
+                )
+            }
+        }, 4000);
     }
 
     onCollision(entity) {
@@ -79,6 +109,14 @@ class Player extends ComplexEntity {
         this.direction = -1
     }
 
+    up() {
+        this.state = "run"
+        this.speedY = -4
+    }
+    down() {
+        this.state = "run"
+        this.speedY = 4
+    }
 }
 
 export default Player

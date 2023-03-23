@@ -1,5 +1,5 @@
 import Entity from "./entity.js";
-
+import { levels } from "../constants/levels.js";
 
 class Background extends Entity {
     constructor() {
@@ -17,7 +17,13 @@ class Background extends Entity {
         if (this.oldStage != this.stage) {
             this.oldStage = this.stage
             this.sprite = assets.stages[this.stage].bg
+            if (levels[this.stage].alt == true) {
+                this.height = 760
+            }
         }
+
+        this.ctx.fillStyle = "#000000"
+        this.ctx.fillRect(0, 480, 960, 280)
 
         this.ctx.drawImage(
             this.sprite,
@@ -27,8 +33,6 @@ class Background extends Entity {
             this.height
         )
 
-        this.ctx.fillStyle = "#000000"
-        this.ctx.fillRect(0, 480, 960, 280)
     }
 }
 

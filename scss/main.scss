@@ -21,6 +21,10 @@ html {
     background-color: #100b13;
 }
 
+body.lolcat {
+    animation: 1s hue-rotate infinite;
+}
+
 #loading {
     position: fixed;
     top: 0;
@@ -252,4 +256,14 @@ html {
 @font-face {
     font-family: 'NerdFont';
     src: url('../fonts/NerdFont.ttf');
+}
+
+@keyframes hue-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }

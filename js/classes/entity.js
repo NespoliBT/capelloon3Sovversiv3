@@ -8,12 +8,14 @@ class Entity {
         this.sprite = sprite;
         this.state = state
         this.id = id
+        this.speedY = 0
 
         this.ctx = document.getElementById("canvas").getContext("2d")
     }
 
     move() {
         this.x += this.speed;
+        this.y += this.speedY;
     }
 
     draw() {

@@ -9,7 +9,7 @@ const levelsMap = {
     barAlley: 3,
     macrohard: 4,
     "macrohard-inside": 5,
-    "macrohard-1": 6,
+    "macrohard-0": 6,
 }
 
 

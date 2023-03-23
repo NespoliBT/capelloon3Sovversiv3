@@ -2,7 +2,7 @@ import { draw } from "./std/draw.js"
 import { startup } from "./std/startup.js"
 import { loadingSentences } from "./constants/loadingSentences.js"
 
-window.debug = false
+window.debug = true
 
 document.addEventListener("DOMContentLoaded", () => {
     const loading = document.getElementById("loading")

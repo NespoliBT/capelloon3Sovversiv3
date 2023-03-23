@@ -261,7 +261,7 @@ const conversations = {
             }
         ]
     },
-    "macrohard-1": {
+    "macrohard-0": {
         actors: ["player_", "player"],
         lines: [
             {

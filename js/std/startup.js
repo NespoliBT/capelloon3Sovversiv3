@@ -16,9 +16,9 @@ import Player_ from "../classes/player_.js"
 const createPlayer = () => {
     return new Player(
         20,
-        384,
-        96,
-        96,
+        408,
+        56,
+        72,
         0,
         "idle",
         "player"

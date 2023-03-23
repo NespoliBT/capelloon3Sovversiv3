@@ -18,11 +18,16 @@ class ComplexEntity extends Entity {
         setInterval(() => {
             if (this.direction == 1) {
                 this.xOffset += this.width
-                this.xOffset %= this.stateImgs[this.state].naturalWidth
+                this.xOffset %= assets[id][
+                    state + (this.direction == 1 ? "" : "-flip")
+                ].naturalWidth
             } else {
                 this.xOffset -= this.width
-                if (this.xOffset < 0) this.xOffset = this.stateImgs[this.state].naturalWidth - this.width
+                if (this.xOffset < 0) this.xOffset = assets[id][
+                    state + (this.direction == 1 ? "" : "-flip")
+                ].naturalWidth - this.width
             }
+
         }, 100);
     }
 
